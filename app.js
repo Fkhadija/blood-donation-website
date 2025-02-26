@@ -1,24 +1,22 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+const path = require('path');
 const app = express();
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+// Set the view engine to EJS
 app.set('view engine', 'ejs');
-
-// Database Connection
-mongoose.connect('mongodb://localhost:27017/bloodDonationDB')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Failed to connect to MongoDB', err));
+app.set('views', path.join(__dirname, 'views'));
 
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/donors', require('./routes/donors'));
 app.use('/hospitals', require('./routes/hospitals'));
+// Handle 404 errors
+app.use((req, res) => {
+  res.status(404).render('pages/404'); // Ensure you have a 404.ejs file
+});
 
-// Start Server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
