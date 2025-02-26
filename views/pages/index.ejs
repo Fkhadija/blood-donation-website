@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation</title>
+  
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the Blood Donation Platform</h1>
+        <p>Join us in saving lives. Every drop counts.</p>
+        <a href="/donors/register" class="cta-btn">Register as a Donor</a>
+      </div>
+      <div class="animation-container">
+        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> <dotlottie-player src="https://lottie.host/e4da6c5b-1d5b-4a69-9ee1-9cd1c74d4e6b/MXVgEPSnDK.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+      <h2>Our Impact</h2>
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3 id="lives-saved">0</h3>
+          <p>Lives Saved</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="donors-registered">0</h3>
+          <p>Donors Registered</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="hospitals-supported">0</h3>
+          <p>Hospitals Supported</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2>What People Are Saying</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p>"Donating blood was a rewarding experience. The team was very professional!"</p>
+          <h4>- John Doe, Donor</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"This platform helped us find donors quickly during an emergency. Thank you!"</p>
+          <h4>- Jane Smith, Hospital Staff</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"I’m proud to be part of this life-saving initiative. Highly recommend!"</p>
+          <h4>- Alice Johnson, Donor</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta">
+      <h2 class="gg">Ready to Make a Difference?</h2>
+      <a href="/donors/register" class="cta-btn">Donate Blood Today</a>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Blood Donation Website. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <script src="/js/stats.js"></script>
+</body>
+</html>

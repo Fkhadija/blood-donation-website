@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor List</title>
+  <div id="particles-js"></div>
+  <script src="/js/particles.js"></script>
+  <script src="/js/theme.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+  <header>
+    <h1>Donor List</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/donors/register">Register as Donor</a>
+      <a href="/hospitals/request">Request Blood</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Registered Donors</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Blood Type</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% donors.forEach(donor => { %>
+          <tr>
+            <td><%= donor.name %></td>
+            <td><%= donor.bloodType %></td>
+            <td><%= donor.email %></td>
+            <td><%= donor.phone %></td>
+            <td><%= donor.location %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <p><i class="fas fa-heart"></i> &copy; 2025 Blood Donation Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
